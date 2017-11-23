@@ -1,0 +1,47 @@
+function replaceA(word:string):string
+	var newWord: string := ""
+	for i: 1 .. length(word)
+		if word(i) = "a" then
+			newWord += "aa"
+		else
+			newWord += word(i)
+		end if
+	end for
+	result newWord
+end replaceA
+function replaceB(word:string):string
+	var newWord: string := ""
+	for i: 1 .. length(word)
+		if word(i) = "b" then
+			newWord += "c"
+		else
+			newWord += word(i)
+		end if
+	end for
+	result newWord
+end replaceB
+function addC(word:string):string
+	var randNum: int 
+	randint(randNum, 1, length(word))
+	var newWord: string:=""
+	newWord += word(1 .. randNum - 1)
+	newWord += "c"
+	newWord += word(randNum .. length(word))
+	result newWord
+end function
+put "Please enter a word: "..
+var word:string
+var randNum: int
+get word
+for i: 1 .. 5
+	randint(randNum, 1, 3)
+	case(randNum)
+		label 1:	
+			word := replaceA(word)
+		label 2:
+			word := replaceB(word)
+		label 3:
+			word := addC(word)
+	end case
+end for
+put "Your new word is: ", word, "."

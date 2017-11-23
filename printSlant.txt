@@ -1,0 +1,11 @@
+var numRows: int
+get numRows
+procedure printSlant(numRows: int)
+	for i: 1 .. numRows
+		for j: 1 .. (numRows - 1)mod7
+			put " "..
+		end for
+		put "*"
+	end for
+end printSlant
+printSlant(numRows)

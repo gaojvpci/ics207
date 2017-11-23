@@ -1,0 +1,11 @@
+
+function GCF(a:int, b:int):int
+	for decreasing i: a .. 1
+		if a mod i = 0 and b mod i = 0 then
+			result i
+		end if
+	end for
+end GCF
+function LCM(a:int, b:int):int
+	result a*b/GCF(a, b)
+end LCM
