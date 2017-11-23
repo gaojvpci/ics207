@@ -1,5 +1,22 @@
 var number, numTries, realNum:int
-var guess:string
+var guess, name:string
+put "Please enter your name: "..
+get name :*
+case(name) of
+    label "Jack", "jack", "JACK", "jackass", "jackie chan", "jest", "Jest":
+	put "Fine, if youre jack, then what's the password????: "..
+	var password: string
+	get password :*
+	if length(password) = 2 and ord(password(1)) = 42 and ord(password(2)) = 69 then
+	    put "You're a god."
+	else
+	    put "Get out of here, imposter!!!!!!"
+	end if  
+    label "Michael": put "youre dumb"
+    label "Richard": put "youre a weab"
+    label "Nima", "your mom": put "That's not very nice."
+    label: put "Never heard of him."
+end case
 var a, b:string
 var ran: int
 randint(ran, 1, 2)
@@ -10,8 +27,8 @@ else
 end if
 loop
 put "Please enter two numbers as the range of the random numbers to be generated: "..
-get a
-get b
+get a 
+get b 
 if strintok(a) and strintok(b) then
     if strint(a) = strint(b) then
 	put "That is not a valid range."
@@ -58,13 +75,13 @@ end if
 numTries := 0
 loop
     put "Guess my random number: "..
-    get guess
+    get guess :*
     if strintok(guess) then
 	realNum:=strint(guess)
     else
 	loop
 	    put "You didn't enter a valid number >:( "..
-	    get guess
+	    get guess :*
 	    if(strintok(guess)) then
 		realNum := strint(guess)
 		exit

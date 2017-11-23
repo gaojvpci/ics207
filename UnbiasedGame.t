@@ -4,13 +4,13 @@ randint(number, 0, 100)
 numTries := 0
 loop
     put "Guess my random number: "..
-    get guess
+    get guess :*
     if strintok(guess) then
 	realNum:=strint(guess)
     else
 	loop
 	    put "You didn't enter a valid number >:( "..
-	    get guess
+	    get guess :*
 	    if(strintok(guess)) then
 		realNum := strint(guess)
 		exit
@@ -26,13 +26,13 @@ loop
 	put "That's greater than my number."
     else
 	put "You got the number in ", numTries, " tries."
-	if numTries >= 7 then
+	if numTries >= 8 then
 	    put "That's pretty bad. :("
-	elsif numTries <= 3 then
-	    put "You're a GOD."
+	elsif numTries <= 4 then
+	    put "That's pretty good."
 	else
 	
-	    put "That's pretty average."
+	    put "That's pretty ok."
 	end if
 	exit
     end if
